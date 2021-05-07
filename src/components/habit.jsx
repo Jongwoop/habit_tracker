@@ -1,18 +1,28 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class Habit extends Component {
-  handleIncrement = (event) => {
-    this.setState({ count: this.state.count + 1 });
-  };
-  handleDecrement = (event) => {
-    const count = this.state.count - 1;
-    this.setState({ count: count < 0 ? 0 : count });
+class Habit extends PureComponent {
+  componentDidMount() {
+    console.log(`habit: ${this.props.habit.name} mounted`);
+  }
+  componentWillUnmount() {
+    console.log(`habit: ${this.props.habit.name} will unmount`);
+  }
+
+  handleIncrement = (habit) => {
+    this.props.onIncrement(this.props.habit);
   };
 
-  handleDelete = (event) => {};
+  handleDecrement = (habit) => {
+    this.props.onDecrement(this.props.habit);
+  };
+
+  handleDelete = (habit) => {
+    this.props.onDelete(this.props.habit);
+  };
 
   render() {
     const { name, count } = this.props.habit;
+    console.log(`habit: ${name}`);
     return (
       <li className="habit">
         <span className="habit-name">{name}</span>
