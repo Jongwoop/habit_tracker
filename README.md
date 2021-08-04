@@ -6,7 +6,7 @@ Habit Tracker
 
 Habit tracker which could mesure what user did as habit records.
 
-<img src="https://github.com/Jongwoop/habit_tracker/blob/main/screenshot.png" alt="screenshot" width="600px" />
+<img src="https://github.com/Jongwoop/habit_tracker/blob/main/screenshot.png" alt="screenshot" width="400" />
 
 ## Stack used
 
